@@ -79,19 +79,19 @@
       *>   --------------------FINANZAS------------WORKING--------------
        01  ANALISIS.
            02 FILLER PIC X(10) VALUE "LUNES".
-           02 FILLER PIC X(10) VALUE "".
+           02 FILLER PIC X(10) VALUE " ".
            02 FILLER PIC X(10) VALUE "MIERCOLES".
-           02 FILLER PIC X(10) VALUE "".
+           02 FILLER PIC X(10) VALUE " ".
            02 FILLER PIC X(10) VALUE "VIERNES".
        01  TABLA-FINANZAS-ANALISIS REDEFINES ANALISIS.
            02 D-ANALISIS PIC X(10) OCCURS 5 TIMES.
 
        01  PROCEDIMIENTO.
-           02 FILLER PIC X(10) VALUE "".
+           02 FILLER PIC X(10) VALUE " ".
            02 FILLER PIC X(10) VALUE "MARTES".
-           02 FILLER PIC X(10) VALUE "".
+           02 FILLER PIC X(10) VALUE " ".
            02 FILLER PIC X(10) VALUE "JUEVES".
-           02 FILLER PIC X(10) VALUE "".
+           02 FILLER PIC X(10) VALUE " ".
        01 TABLA-FINANZAS-PROCEDIMIENTO REDEFINES PROCEDIMIENTO.
            02 D-PROCEDIMIENTO PIC X(10) OCCURS 5 TIMES.
       *>   -------------------------------------------------------------
@@ -100,17 +100,17 @@
       *>   --------------------CLIENTES------------------WORKING--------
        01  ATENCION.
            02 FILLER PIC X(10) VALUE "LUNES".
-           02 FILLER PIC X(10) VALUE "".
+           02 FILLER PIC X(10) VALUE " ".
            02 FILLER PIC X(10) VALUE "MIERCOLES".
-           02 FILLER PIC X(10) VALUE "".
-           02 FILLER PIC X(10) VALUE "".
+           02 FILLER PIC X(10) VALUE " ".
+           02 FILLER PIC X(10) VALUE " ".
        01  TABLA-CLIENTES-ATENCION REDEFINES ATENCION.
            02 D-ATENCION PIC X(10) OCCURS 5 TIMES.
 
        01  ACT-DATOS.
-           02 FILLER PIC X(10) VALUE "".
-           02 FILLER PIC X(10) VALUE "".
-           02 FILLER PIC X(10) VALUE "MIERCOLES".
+           02 FILLER PIC X(10) VALUE " ".
+           02 FILLER PIC X(10) VALUE "MARTES".
+           02 FILLER PIC X(10) VALUE " ".
            02 FILLER PIC X(10) VALUE "JUEVES".
            02 FILLER PIC X(10) VALUE "VIERNES".
        01 TABLA-CLIENTES-ACT-DATOS REDEFINES ACT-DATOS.
@@ -120,19 +120,19 @@
        
       *>   --------------------INVERSIONES--------------WORKING---------
        01  ADMINISTRACION.
-           02 FILLER PIC X(10) VALUE "".
+           02 FILLER PIC X(10) VALUE " ".
            02 FILLER PIC X(10) VALUE "MARTES".
-           02 FILLER PIC X(10) VALUE "".
+           02 FILLER PIC X(10) VALUE " ".
            02 FILLER PIC X(10) VALUE "JUEVES".
-           02 FILLER PIC X(10) VALUE "".
+           02 FILLER PIC X(10) VALUE " ".
        01  TABLA-INVERC-ADMINISTRACION REDEFINES ADMINISTRACION.
            02 D-ADMINISTRACION PIC X(10) OCCURS 5 TIMES.
 
        01  ASESORAMIENTO.
-           02 FILLER PIC X(10) VALUE "".
-           02 FILLER PIC X(10) VALUE "".
+           02 FILLER PIC X(10) VALUE "LUNES".
+           02 FILLER PIC X(10) VALUE " ".
            02 FILLER PIC X(10) VALUE "MIERCOLES".
-           02 FILLER PIC X(10) VALUE "JUEVES".
+           02 FILLER PIC X(10) VALUE " ".
            02 FILLER PIC X(10) VALUE "VIERNES".
        01 TABLA-INVERC-ASESORAMIENTO REDEFINES ASESORAMIENTO.
            02 D-ASESORAMIENTO PIC X(10) OCCURS 5 TIMES.
@@ -141,20 +141,20 @@
        
       *>   --------------------PRESTAMO------------------WORKING--------
        01  PROMOSION.
-           02 FILLER PIC X(10) VALUE "".
-           02 FILLER PIC X(10) VALUE "MARTES".
-           02 FILLER PIC X(10) VALUE "".
-           02 FILLER PIC X(10) VALUE "JUEVES".
-           02 FILLER PIC X(10) VALUE "".
+           02 FILLER PIC X(10) VALUE " ".
+           02 FILLER PIC X(10) VALUE " ".
+           02 FILLER PIC X(10) VALUE " ".
+           02 FILLER PIC X(10) VALUE " ".
+           02 FILLER PIC X(10) VALUE "VIERNES".
        01  TABLA-PREST-PROMOSION REDEFINES PROMOSION.
            02 D-PROMOSION PIC X(10) OCCURS 5 TIMES.
 
        01  OTORGAMIENTO.
-           02 FILLER PIC X(10) VALUE "".
-           02 FILLER PIC X(10) VALUE "".
+           02 FILLER PIC X(10) VALUE "LUNES".
+           02 FILLER PIC X(10) VALUE "MARTES".
            02 FILLER PIC X(10) VALUE "MIERCOLES".
            02 FILLER PIC X(10) VALUE "JUEVES".
-           02 FILLER PIC X(10) VALUE "VIERNES".
+           02 FILLER PIC X(10) VALUE " ".
        01  TABLA-PREST-OTORGAMIENTO REDEFINES OTORGAMIENTO.
            02 D-OTORGAMIENTO PIC X(10) OCCURS 5 TIMES.
       *>   -------------------------------------------------------------
@@ -380,8 +380,8 @@
            END-PERFORM.
 
            DISPLAY "FIN DE PROGRAMA ARIEL GIMENEZ 16/03/2023"
-           DISPLAY ""
-           DISPLAY ""
+           DISPLAY " "
+           DISPLAY " "
 
        *>  TERMINA PROGRAMA
            STOP RUN.
