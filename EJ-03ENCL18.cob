@@ -3,7 +3,7 @@
       *>--------------------------------------
       *> IdentificarDatos
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. EJ-01ENCL18.
+       PROGRAM-ID. EJ-03ENCL18.
       *>--------------------------------------
 
 
@@ -24,14 +24,15 @@
       *>--------------------------------------
        
 
-      *>--------------------------------------
+      *>-----------------------WORKING-STORAGE-------------------------
        WORKING-STORAGE SECTION.
       *> DECLARANDO DIAS DE FORMA NORMAL
        
+      *>----------------------------------------------------------------
       *> DECLARANDO ARRAY SIN DEFINIR
       *> ES UNA ESTRUCTURA QUE DENTRO TIENE EL OCCURS
        *> COMO USAR REDEFINES DECLARAR DATOS DENTRO DE ARRAY
-       01  DIASSEMANA.
+       01  DIAS-SEMANA.
            02 FILLER PIC X(10) VALUE "LUNES ".
            02 FILLER PIC X(10) VALUE "MARTES ".
            02 FILLER PIC X(10) VALUE "MIERCOLES ".
@@ -39,46 +40,37 @@
            02 FILLER PIC X(10) VALUE "VIERNES ".
            02 FILLER PIC X(10) VALUE "SABADO ".
            02 FILLER PIC X(10) VALUE "DOMINGO ".
-       01 TABLADEDIAS.
-           02 ELDIA REDEFINES DIASSEMANA PIC X(10) OCCURS 7 TIMES. 
+      *>     02 ELDIA REDEFINES DIASSEMANA PIC X(10) OCCURS 7 TIMES. 
+       01 TABLA-DE-DIAS REDEFINES DIAS-SEMANA.
+           02 LOS-DIAS PIC X(10) OCCURS 7 TIMES.
 
-      *> INDICE TABLA
-       77 DIA PIC 9(2).
-      *>------------------------------------------------------------------------
-
-
-      *> VALOR PARA LOS INDICES 
-      *> DECLARANDO DIAS DE FORMA NORMAL
-       01 LUNES PIC 9(4).
-       01 MARTES PIC 9(4). 
-       01 MIERCOLES PIC 9(4).
-       01 JUEVES PIC 9(4).
-       01 VIERNES PIC 9(4).
-       01 SABADO PIC 9(4).
-       01 DOMINGO PIC 9(4).
-       
-      *> DECLARANDO ARRAY SIN DEFINIR
-      *> ES UNA ESTRUCTURA QUE DENTRO TIENE EL OCCURS
-       01 DIASSEMANA.
-           02 VISITAS PIC 9(4) OCCURS 7 TIMES. 
-      
+      *>----------------------------------------------------------------
+       01  CANT-VISITANTES.
+           02 FILLER PIC 9999 VALUE 200.
+           02 FILLER PIC 9999 VALUE 430.
+           02 FILLER PIC 9999 VALUE 136.
+           02 FILLER PIC 9999 VALUE 525.
+           02 FILLER PIC 9999 VALUE 380.
+           02 FILLER PIC 9999 VALUE 1910.
+           02 FILLER PIC 9999 VALUE 2300.
+       01  TABLA-CANT-VISITANTES REDEFINES CANT-VISITANTES.
+           02 VISITAS PIC 9999 OCCURS 5 TIMES.
       *>--------------------------------------
+       
+       *> INDICE TABLA
+       77 DIA PIC 9(2).
 
+      *>-------------------PROCEDURE-------------------
        PROCEDURE DIVISION.
 
-           MOVE 200 TO LUNES.
-           MOVE 430 TO MARTES.
-           MOVE 136 TO MIERCOLES.
-           MOVE 525 TO JUEVES.
-           MOVE 380 TO VIERNES.
-           MOVE 1910 TO SABADO.
-           MOVE 2300 TO DOMINGO.
-       
-
-      *> RECORRER EL BUCLE
-           PERFORM VARYING DIA FROM 1 BY 1 UNTIL 7
-               DISPLAY "CANTIDAD DE PERSONAS QUE VISITARON EL DIA" ELDIA(DIA).
-               DISPLAY "ES DE VISITAS" VISITAS(DIA)
-           END-PERFORM.
-
+      *>   RECORRER EL BUCLE
+           PERFORM VARYING DIA FROM 1 BY 1 UNTIL DIA > 7
+      *>     PERFORM VARYING DIA FROM 1 BY 1 DIA > 7
+               DISPLAY ">------------------------------"
+               DISPLAY "EL DIA " LOS-DIAS(DIA)
+               DISPLAY "VISITARON = " VISITAS(DIA)
+               DISPLAY ">------------------------------"
+               DISPLAY " " 
+           END-PERFORM
+      
            STOP RUN.

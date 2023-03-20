@@ -3,7 +3,7 @@
       *>--------------------------------------
       *> IdentificarDatos
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. EJ-01ENCL18.
+       PROGRAM-ID. EJ-02ENCL18.
       *>--------------------------------------
 
 
