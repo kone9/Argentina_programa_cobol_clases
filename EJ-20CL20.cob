@@ -122,7 +122,7 @@
            DISPLAY "-------------------------------------------------".
            DISPLAY "-------------------------------------------------".
            DISPLAY "AHORA VA A INGRESAR LAS NOTAS"
-
+           DISPLAY "-------------------------------------------------".
       *>--------------------GUARDAR NOTAS-------------------------------
        
       *>   BUCLE PARA GUARDAR LAS NOTAS
@@ -135,6 +135,7 @@
                       DISPLAY "ingrese la nota " I-NOTAS
                       ACCEPT NOTAS-TM(I-NOTAS)
                 END-PERFORM
+                DISPLAY "----------------------------------------------"
             END-IF
 
            IF TURNOS(I_TURNO) EQUAL "TARDE"
@@ -142,6 +143,7 @@
                       DISPLAY "ingrese la nota " I-NOTAS
                       ACCEPT NOTAS-TT(I-NOTAS)
                 END-PERFORM
+                DISPLAY "----------------------------------------------"
            END-IF
 
            IF TURNOS(I_TURNO) EQUAL "NOCHE"
@@ -149,6 +151,7 @@
                       DISPLAY "ingrese la nota " I-NOTAS
                       ACCEPT NOTAS-TN(I-NOTAS)
                 END-PERFORM
+                DISPLAY "----------------------------------------------"
            END-IF
                     
            END-PERFORM.
