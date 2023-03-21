@@ -1,5 +1,5 @@
 
-      *> CLASE 18 Ejercicio ejercicio CLASE 18
+      *> CLASE 18 Ejercicio ejercicio resuelto CLASE 20
       *> Ariel Gimenez
 
       *>  Construir un diagrama de flujo para describir la solución y mostrar 
