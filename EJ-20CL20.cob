@@ -184,7 +184,8 @@
            DISPLAY " ".
 
       *>--------------------MOSTRAR PROMEDIO GENERAL--------------------
-           COMPUTE PROM-GRAL = (PROM-TM + PROM-TT + PROM-TN) / 15
+      *>     COMPUTE PROM-GRAL = (PROM-TM + PROM-TT + PROM-TN) / 15
+           COMPUTE PROM-GRAL = (PROM-TM + PROM-TT + PROM-TN) / 3
            DISPLAY "EL PROMEDIO GRAL ES " PROM-GRAL. 
 
            DISPLAY "-------------------------------------------------".
