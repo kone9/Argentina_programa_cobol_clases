@@ -33,6 +33,7 @@
        ENVIRONMENT DIVISION.
        CONFIGURATION SECTION.
            SPECIAL-NAMES.
+      *>   importante si uso decimal point, tengo que poner coma en los puntos
            DECIMAL-POINT IS COMMA.
 
 
@@ -57,7 +58,8 @@
        
       *>   -------------------------------------------------------------
        
-      *> TABLA PORCENTAJES QUE OCURRE 5 VECES CON VALOR 99V9
+      *>   TABLA PORCENTAJES QUE OCURRE 5 VECES CON VALOR 99V9
+      *>   Uso decimal point, tengo que poner coma en los puntos
        01  MONTOS-PORCENTAJES.
            02 A PIC 99V9 VALUE 15,5.
            02 B PIC 99V9 VALUE 10,5.
@@ -87,6 +89,7 @@
        01 RESUL PIC 9(9)V99.
       *>  PESO ADELANTE PARA QUE MUESTRE EL PESO CON REFORMATEO punto y coma
        01 EDICION PIC $ZZZ.ZZZ.ZZ9,99.
+       
       *>---------------------------PROCEDURE----------------------------
        PROCEDURE DIVISION.
            DISPLAY MONTOS-PORCENTAJES.
