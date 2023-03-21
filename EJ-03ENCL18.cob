@@ -65,12 +65,8 @@
 
       *>   RECORRER EL BUCLE
            PERFORM VARYING DIA FROM 1 BY 1 UNTIL DIA > 7
-      *>     PERFORM VARYING DIA FROM 1 BY 1 DIA > 7
-               DISPLAY ">------------------------------"
-               DISPLAY "EL DIA " LOS-DIAS(DIA)
-               DISPLAY "VISITARON = " VISITAS(DIA)
-               DISPLAY ">------------------------------"
-               DISPLAY " " 
+
+
            END-PERFORM
       
            STOP RUN.

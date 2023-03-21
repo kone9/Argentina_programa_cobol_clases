@@ -25,52 +25,75 @@
 
       *> CLASE 11 Y 12 HAY INFORMACION DE COMO PONER PUNTOS Y COMAS
 
-      *>EJEMPLO 
-      *>ENVIRONMENT DIVISION.
-      *>CONFIGURATION SECTION.
-      *>   SPECIAL-NAMES.
-      *>   DECIMAL-POINT IS COMMA.
        
        IDENTIFICATION DIVISION.
        PROGRAM-ID. CL-18-EJ-18.
+
+      *>EJEMPLO 
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+           SPECIAL-NAMES.
+           DECIMAL-POINT IS COMMA.
+
 
        DATA DIVISION.
 
 
       *>-----------------------------WORKING-STORAGE----------------------------
        WORKING-STORAGE SECTION.
-       01 MILLONES PIC 9(9)V9 VALUE 5250210.
+       01 MILLONES PIC 9(9)V9 VALUE 1000000.
        
-      *> TABLA CON LOS VALORES CONSTANTES DE PORCENTAJE DE CADA PARTICIPANTE 
+      *> TABLA PORCENTAJES QUE OCURRE 5 VECES CON VALOR 99V9
+      *>01  TABLA-PORCENTAJES.
+      *>     02 PORCENTAJES PIC 99V9 OCCURS 5 TIMES.
+
+      *> ACA ABAJO REDEFINO LA TABLA CON CADA VALOR
+      *> 01  MONTOS-PORCENTAJES REDEFINES TABLA-PORCENTAJES.
+      *>     02 A PIC 99V9 VALUE 15,5.
+      *>     02 B PIC 99V9 VALUE 10,5.
+      *>     02 C PIC 99V9 VALUE 50,0.
+      *>     02 D PIC 99V9 VALUE 14,0.
+      *>     02 E PIC 99V9 VALUE 10,0.
+       
+      *>   -------------------------------------------------------------
+       
+      *> TABLA PORCENTAJES QUE OCURRE 5 VECES CON VALOR 99V9
        01  MONTOS-PORCENTAJES.
-           02 FILLER PIC 99V9 VALUE 15.5.
-           02 FILLER PIC 99V9 VALUE 10.5.
-           02 FILLER PIC 99V9 VALUE 50.0.
-           02 FILLER PIC 99V9 VALUE 14.0.
-           02 FILLER PIC 99V9 VALUE 10.0.
+           02 A PIC 99V9 VALUE 15,5.
+           02 B PIC 99V9 VALUE 10,5.
+           02 C PIC 99V9 VALUE 50,0.
+           02 D PIC 99V9 VALUE 14,0.
+           02 E PIC 99V9 VALUE 10,0.
+       
        01  TABLA-PORCENTAJES REDEFINES MONTOS-PORCENTAJES.
            02 PORCENTAJES PIC 99V9 OCCURS 5 TIMES.
       *>   -------------------------------------------------------------
 
       *> TABLA CON EL VALOR DE CADA UNO TOMANDO EN CUENTO EL MONTO MILLONES
+      *> VARIABLE DE EDICION
        01  MONTOS-FINALES.
-           02 FILLER PIC 9999999V9 VALUE 1.
-           02 FILLER PIC 9999999V9 VALUE 1.
-           02 FILLER PIC 9999999V9 VALUE 1.
-           02 FILLER PIC 9999999V9 VALUE 1.
-           02 FILLER PIC 9999999V9 VALUE 1.
+           02 FILLER PIC 9(9)V99.
+           02 FILLER PIC 9(9)V99.
+           02 FILLER PIC 9(9)V99.
+           02 FILLER PIC 9(9)V99.
+           02 FILLER PIC 9(9)V99.
        01  TABLA-MONTOS-FINALES REDEFINES MONTOS-FINALES.
-           02 MONTOS PIC ZZZZZZZZZ OCCURS 5 TIMES.
+           02 MONTOS PIC 9(9)V99 OCCURS 5 TIMES.
       *>   -------------------------------------------------------------
 
       *>  CREO UN INDICE PARA RECORRER LOS BUCLES 
-       01  i PIC 99.
-       
-
+       01 INDICE PIC 99.
+      *>  VARIABLE TEMPORAL PARA HACER EL CALCULO
+       01 RESUL PIC 9(9)V99.
+      *>  PESO ADELANTE PARA QUE MUESTRE EL PESO CON REFORMATEO punto y coma
+       01 EDICION PIC $ZZZ.ZZZ.ZZ9,99.
       *>---------------------------PROCEDURE----------------------------
        PROCEDURE DIVISION.
-      
+           DISPLAY MONTOS-PORCENTAJES.
+           DISPLAY MONTOS-PORCENTAJES.
+
       *>   DETALLE ESTETICO INICIAL
+           DISPLAY "---------------------------------------------------"
            DISPLAY "---------------------------------------------------"
            DISPLAY "          "
            
@@ -79,14 +102,19 @@
            DISPLAY "          "
 
       *>   RECORRE 5 VECES PARA REPRESENTAR LOS 5 PORCENTAJES
-           PERFORM VARYING i FROM 1 BY 1 UNTIL i > 5
+           PERFORM VARYING INDICE FROM 1 BY 1 UNTIL INDICE > 5
       
       *>   GUARDO EL MONTO SEGUN EL PORCENTAJE EN CADA RESULTADO 
-                  COMPUTE MONTOS(i) = MILLONES * (PORCENTAJES(i) / 100)
-      
+                  COMPUTE RESUL = MILLONES * PORCENTAJES(INDICE) / 100 
+                  MOVE RESUL TO MONTOS(INDICE)
+
+                  MOVE MONTOS(INDICE) TO EDICION
       *>   MUESTRO RESULTADO, ME FALTO EL TEMA DE LOS PUNTOS 
-      *>   Y LAS COMAS, ESPERO RESPUESTA DE ESO EN CLASE    
-                  DISPLAY "$" MONTOS(I)
+      *>   Y LAS COMAS, ESPERO RESPUESTA DE ESO EN CLASE
+
+                  DISPLAY  MONTOS(INDICE)
+                  DISPLAY  PORCENTAJES(INDICE)
+                  DISPLAY  EDICION
           
       *>   FIN BUCLE
            END-PERFORM
@@ -96,7 +124,7 @@
            DISPLAY "          "
            DISPLAY "---------------------------------------------------"
 
-           DISPLAY "FIN DE PROGRAMA ARIEL GIMENEZ 16/03/2023"
+           DISPLAY "FIN DE PROGRAMA ARIEL GIMENEZ 20/03/2023"
            DISPLAY " "
            DISPLAY " "
 
