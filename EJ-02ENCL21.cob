@@ -1,4 +1,4 @@
-      *> CLASE 22 Ejercicio CLASE 
+      *> CLASE 21 Ejercicio CLASE tarea 19 
 
       *>Construir un diagrama de flujo para describir la solución 
       *> y mostrar resultado de la siguiente problemática:
