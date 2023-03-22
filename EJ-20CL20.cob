@@ -1,5 +1,6 @@
-      *> CLASE 20 Ejercicio ejercicio resuelto CLASE 20
+      *> CLASE 20 Ejercicio tarea CLASE 20
       *> Ariel Gimenez
+      *> 21/03/2023
 
       *> Construir un diagrama de flujo para describir la solución y 
       *> mostrar resultado de la siguiente problemática:
@@ -15,19 +16,16 @@
       *> 3) Mostrar promedio general
       
       
-      
       *> el comentario siempre empieza de la linea 7
       *> en mainframe no se puede hacer accert por consola
       *> tener en cuenta eso ya que eso.
       *> el entorno profesional es "Cobol, CICS y DB2"
-
 
       *>--------------------------------------
       *> IdentificarDatos
        IDENTIFICATION DIVISION.
        PROGRAM-ID. EJ-TR-CL20.
       *>--------------------------------------
-
 
       *>--------------------------------------
       *> es importante esto, porque sino mainframe cancela
@@ -37,14 +35,21 @@
       *> el tipo de decimal 
        ENVIRONMENT DIVISION. 
       *>--------------------------------------
-
-
+       
+      *>--------------------------------------
+      *>   es dependiendte de enviroment division sino esta 
+      *>   enviroment division arriba no va a funcionar
+       CONFIGURATION SECTION.
+      *>    
+      *>--------------------------------------
+      
       *>--------------------------------------
        DATA DIVISION.
       *>     FILES SECTION.
       *>     INPUT OUTPUT SECTION.
       *>--------------------------------------
        
+
 
       *>----------------------------WORKING-----------------------------
        WORKING-STORAGE SECTION.
@@ -125,7 +130,9 @@
            DISPLAY "-------------------------------------------------".
       *>--------------------GUARDAR NOTAS-------------------------------
        
-      *>   BUCLE PARA GUARDAR LAS NOTAS
+      *>   BUCLE PARA GUARDAR LAS NOTAS3
+      *>   el perform seria
+      *>   Ejecute "variando" VARIABLE de uno a uno hasta el valor indice
            PERFORM VARYING I_TURNO FROM 1 BY 1 UNTIL I_TURNO > C_TURNOS
                       DISPLAY "DEL TURNO " TURNOS(I_TURNO)
 
